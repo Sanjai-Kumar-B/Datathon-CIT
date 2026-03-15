@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom root variables for existing CSS usage */
+:root {
+  /* Global Tokens */
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+
+  /* Teacher Theme (Vedantu-inspired) */
+  --teacher-primary: #ff6b35; /* Vedantu Orange */
+  --teacher-secondary: #0056b3; /* Deep Blue */
+  --teacher-bg: #f8fafc;
+  --teacher-sidebar: #ffffff;
+  --teacher-card: #ffffff;
+  --teacher-accent: #ff9f1c;
+  --teacher-gradient: linear-gradient(135deg, #ff6b35 0%, #ff9f1c 100%);
+
+  /* Parent Theme (Professional/Warm) */
+  --parent-primary: #6d597a; /* Muted Purple */
+  --parent-secondary: #355070; /* Teal/Blue */
+  --parent-bg: #fffcf9;
+  --parent-navbar: #ffffff;
+  --parent-card: #ffffff;
+  --parent-accent: #b56576;
+  --parent-gradient: linear-gradient(135deg, #6d597a 0%, #b56576 100%);
+
+  /* Status Colors */
+  --success: #2ec4b6;
+  --warning: #ffbf69;
+  --error: #e71d36;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f8fafb; /* Light Vedantu Gray */
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+@keyframes progress-ind {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-progress-ind {
+  animation: progress-ind 1.5s infinite linear;
+}
+
+.border-primary-dark {
+  border-color: #3b82f6;
+}
+
+.bg-primary-dark {
+  background-color: #2563eb;
+}

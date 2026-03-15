@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">auto_awesome</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50">AI Learning Companion</h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-semibold text-primary" href="#">Tips</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Progress</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Chat</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile minimalist avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcwCpedHBGE9O5BnSv9-5n_GXVfFvTl5sboWPzTb_co4B0i0Xovq5JRNUulmHX-S5URPO2iHtpnM5EwirliY7ETYSglB6jK49kzZRLvPkVjp9JIB-20sZQOd1qe5kj23BFnNzla3yt8vgrld8h5ngIFeQoQZIUpPj-hqb-NkP9OhjeRtAtf4NSN_IK-oW3X9uIgoUF2n8G19v1iMCZ76m5uIbF6_AO94R6orQ2jvX1pRVXkDt_Xlg_9VVZkHYKGEUdiLMmp3i0p4Mm"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-4 py-8">
+<!-- Header Section -->
+<div class="mb-10">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-2">Learning Tips</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl">Daily bite-sized insights to help you support your child's developmental journey through play and exploration.</p>
+</div>
+<!-- Featured Tip: Tip of the Day -->
+<section class="mb-12">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+<h3 class="text-xl font-semibold">Tip of the Day</h3>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row">
+<div class="w-full md:w-2/5 h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Abstract soft gradient shapes representing focused learning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgs1ixDKtCZPr16tX4YgllfFXNRbyNMAWQBELa5uRjUBqbMl_w-AoRTzAcdb2hDCxJhntSUiTdnDf0rWzuC_Kexc_LPvWaee1YM43me261VavjjcivYJvV5c1ofDKaHPEJt-m8aI2yhHtUYFKd5Ll9yIga_HhJiC_T4Qo2EjVEGWbaIUSYOha4fQ0tJlQ9ttLOKBWA9BEQVDyEWHmiARS-5fJdCFyecZyyczKIao_S-Meje5n1snLHzOumvSA5uCOif991EZtRganh"/>
+</div>
+<div class="p-8 md:w-3/5 flex flex-col justify-center">
+<div class="mb-4">
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/10 text-primary uppercase tracking-wider">Social-Emotional</span>
+</div>
+<h4 class="text-2xl font-bold mb-3">The Power of the 10-Second Wait</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Children's brains take longer to process complex questions than adults. When you ask your child something, try counting to 10 in your head before repeating the question or prompting them. This "wait time" builds confidence and encourages deeper thinking.
+                        </p>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-colors">
+                                Read Full Guide
+                            </button>
+<button class="p-2.5 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold">Explore Categories</h3>
+<button class="text-sm font-medium text-primary hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Fun Counting Activities -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 rounded-lg bg-orange-100 dark:bg-orange-950 flex items-center justify-center text-orange-600 dark:text-orange-400 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">calculate</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Everyday Numeracy</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Turn grocery shopping or snack time into a fun counting game with these 5 simple activities.</p>
+<div class="flex items-center gap-2 text-xs font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                        5 min read
+                    </div>
+</div>
+<!-- Card 2: Learning through play -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-950 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">sports_esports</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Play-Based Learning</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4">How "messy play" with sand and water actually develops critical physics and engineering concepts.</p>
+<div class="flex items-center gap-2 text-xs font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                        8 min read
+                    </div>
+</div>
+<!-- Card 3: Language Development -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 hover:border-primary/50 transition-colors group">
+<div class="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-950 flex items-center justify-center text-green-600 dark:text-green-400 mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">chat_bubble</span>
+</div>
+<h4 class="text-lg font-bold mb-2">Expanding Vocabulary</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4">The "serve and return" method: simple conversational techniques to double your child's word growth.</p>
+<div class="flex items-center gap-2 text-xs font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                        6 min read
+                    </div>
+</div>
+</div>
+</section>
+<!-- Notion-style Minimal List -->
+<section class="max-w-3xl">
+<h3 class="text-xl font-semibold mb-6">Quick Resources</h3>
+<div class="space-y-1">
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">description</span>
+<span class="flex-grow text-sm font-medium">Monthly developmental milestone checklist</span>
+<span class="material-symbols-outlined text-xs text-slate-300">chevron_right</span>
+</a>
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">menu_book</span>
+<span class="flex-grow text-sm font-medium">Top 10 recommended books for toddlers</span>
+<span class="material-symbols-outlined text-xs text-slate-300">chevron_right</span>
+</a>
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">movie</span>
+<span class="flex-grow text-sm font-medium">Video: Guided meditation for parent-child bonding</span>
+<span class="material-symbols-outlined text-xs text-slate-300">chevron_right</span>
+</a>
+<a class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-400">psychology</span>
+<span class="flex-grow text-sm font-medium">Understanding cognitive leaps: Why toddlers act out</span>
+<span class="material-symbols-outlined text-xs text-slate-300">chevron_right</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Simple Footer -->
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-10">
+<div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+<span class="text-sm font-semibold">AI Learning Companion</span>
+</div>
+<p class="text-xs text-slate-400">© 2024 Parent Support Inc. Designed with care for curious minds.</p>
+<div class="flex gap-6">
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

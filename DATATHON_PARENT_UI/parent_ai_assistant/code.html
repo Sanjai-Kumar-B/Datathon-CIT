@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parent AI - Learning Companion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .notion-shadow {
+            box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-3">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">auto_awesome</span>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">Parent AI</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6 ml-8">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Curriculum</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-lg p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-800 mx-1"></div>
+<div class="flex items-center gap-2 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 p-1 rounded-lg transition-colors">
+<div class="bg-primary/10 rounded-full h-8 w-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+</div>
+<span class="text-sm font-semibold hidden sm:inline">Sarah Miller</span>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col md:flex-row max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 gap-8">
+<aside class="w-full md:w-64 flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<button class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-sm">New Session</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-500">history</span>
+<span class="text-sm">Recent Chats</span>
+</button>
+<button class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-500">bookmark</span>
+<span class="text-sm">Saved Activities</span>
+</button>
+</div>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+<h3 class="px-3 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">My Children</h3>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg group">
+<div class="w-2 h-2 rounded-full bg-blue-400"></div>
+<span class="text-sm">Leo (Age 4)</span>
+<span class="material-symbols-outlined text-xs ml-auto opacity-0 group-hover:opacity-100">settings</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg group">
+<div class="w-2 h-2 rounded-full bg-pink-400"></div>
+<span class="text-sm">Maya (Age 2)</span>
+<span class="material-symbols-outlined text-xs ml-auto opacity-0 group-hover:opacity-100">settings</span>
+</div>
+</div>
+</div>
+</aside>
+<div class="flex-1 flex flex-col notion-shadow bg-white dark:bg-slate-900 rounded-xl overflow-hidden min-h-[600px]">
+<div class="flex-1 overflow-y-auto p-6 md:p-10 space-y-8">
+<div class="flex gap-4 max-w-3xl">
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">person</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="text-xs font-bold text-slate-400">SARAH</span>
+<div class="text-lg leading-relaxed text-slate-800 dark:text-slate-200">
+                                    How can I help my child learn numbers?
+                                </div>
+</div>
+</div>
+<div class="flex gap-4 max-w-3xl">
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-1.5">
+<span class="text-xs font-bold text-primary uppercase">Parent Assistant</span>
+<div class="space-y-6">
+<section>
+<h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Simple Explanation</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                                                Children learn numbers best when they are connected to physical objects and daily routines. Instead of focusing on abstract symbols (the number 3), start with "number sense"—the understanding of what "three" actually looks like in the real world.
+                                            </p>
+</section>
+<section class="bg-background-light dark:bg-slate-800/50 p-6 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-2 text-primary mb-3">
+<span class="material-symbols-outlined">rocket_launch</span>
+<h4 class="font-bold">Home Activity Suggestion</h4>
+</div>
+<div class="space-y-4">
+<div>
+<span class="block font-semibold text-slate-800 dark:text-slate-200">The Snack Sort</span>
+<p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
+                                                        During snack time, give Leo a small handful of crackers or grapes. Ask him to help you "prepare" the snack by counting out loud together as you place each piece into a bowl. "One for Leo, one for Maya, two for Leo..."
+                                                    </p>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center gap-2 text-slate-900 dark:text-white mb-3">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+<h4 class="font-bold">Learning Tip</h4>
+</div>
+<div class="border-l-4 border-primary/30 pl-4 py-1">
+<p class="text-slate-600 dark:text-slate-400 italic">
+                                                    "Follow the finger." When counting together, always point to the object. This builds 'one-to-one correspondence,' ensuring the child understands that one number tag belongs to exactly one item.
+                                                </p>
+</div>
+</section>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-xs px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-500 transition-colors">Helpful</button>
+<button class="text-xs px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-500 transition-colors">Try another activity</button>
+<button class="text-xs px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-500 transition-colors">Save to Library</button>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="relative max-w-4xl mx-auto flex items-end gap-2">
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-xl px-4 py-3 flex items-end gap-3 border border-transparent focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-400 pb-1">attach_file</span>
+<textarea class="w-full bg-transparent border-none focus:ring-0 p-0 text-slate-800 dark:text-slate-200 resize-none min-h-[24px] max-h-[120px]" placeholder="Ask anything about Leo or Maya's learning..." rows="1"></textarea>
+<button class="bg-primary text-white p-1.5 rounded-lg hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+<p class="text-[10px] text-center text-slate-400 mt-3 font-medium uppercase tracking-widest">Powered by AI Learning Companion</p>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

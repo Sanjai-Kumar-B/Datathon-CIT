@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ea5e9", // Sky blue primary
+                        "background-light": "#f0f9ff", // Soft sky blue background
+                        "background-dark": "#0c4a6e", // Deep sky blue for dark mode
+                        "learning-green": "#4ade80",
+                        "learning-blue": "#3b82f6",
+                        "accent-yellow": "#fbbf24"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>AI Learning Companion</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap px-6 py-4 md:px-10 lg:px-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center p-2 bg-primary rounded-xl text-white">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-black leading-tight tracking-tight uppercase">AI Companion</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="hidden md:flex flex-col items-end mr-2">
+<span class="text-xs font-bold text-slate-500 uppercase">Explorer</span>
+<span class="text-sm font-black text-primary">Level 12</span>
+</div>
+<div class="bg-primary/10 p-1 rounded-full border-2 border-primary/20">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Cute child avatar illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOph0prLJBcpcxv4jQWc1PYbKhjGOG9qfVOjKofyX8uWGfs-wSNMJ2WJL7EeqB_3-5wnqugnr7vlOw1Iq8pRLvdqBNp0qSyo7b4RNyLTGK-yEF0HHYDmQTGaZznHMR26y0_Mx53AVwe-TfBL3u4wOypXkxeaKlIlms3fRqcB7ZVnslvO1EAh-lXEOEYc5mtlHpyidzdLNZLLsGbkgEurIecCBJVl5HpCg5QMgbjx9RRsWqruzcpQkX39iVooHcP0i8Ich_f-bRiMqX");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center relative overflow-hidden px-4 py-8">
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+<div class="absolute top-10 left-10 text-primary">
+<span class="material-symbols-outlined text-8xl">star</span>
+</div>
+<div class="absolute bottom-20 right-10 text-learning-blue">
+<span class="material-symbols-outlined text-9xl">rocket_launch</span>
+</div>
+<div class="absolute top-1/2 left-20 text-learning-green">
+<span class="material-symbols-outlined text-7xl">lightbulb</span>
+</div>
+<div class="absolute bottom-40 left-1/4 text-accent-yellow">
+<span class="material-symbols-outlined text-8xl">school</span>
+</div>
+</div>
+<div class="relative z-10 w-full max-w-4xl flex flex-col items-center text-center">
+<div class="mb-8 relative">
+<div class="absolute -inset-4 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
+<div class="relative bg-white dark:bg-slate-800 p-8 rounded-full border-8 border-primary shadow-2xl">
+<span class="material-symbols-outlined text-[120px] md:text-[180px] text-primary leading-none">smart_toy</span>
+</div>
+<div class="absolute -top-4 -right-4 bg-accent-yellow p-4 rounded-2xl rotate-12 shadow-lg border-4 border-white dark:border-slate-800">
+<span class="material-symbols-outlined text-4xl text-white">sentiment_very_satisfied</span>
+</div>
+</div>
+<div class="mb-12 space-y-4">
+<h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-6xl font-black leading-tight tracking-tight px-4">
+                        Hi! What do you want to <span class="text-primary underline decoration-8 decoration-primary/30">learn</span> today?
+                    </h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg md:text-xl font-medium">Pick a mission and start your adventure!</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl px-4">
+<button class="group flex flex-col items-center justify-center gap-4 bg-learning-green hover:bg-green-500 text-white p-8 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 border-b-8 border-green-700">
+<span class="material-symbols-outlined text-6xl group-hover:animate-bounce">play_circle</span>
+<span class="text-2xl font-black uppercase tracking-wider">Start Learning</span>
+</button>
+<button class="group flex flex-col items-center justify-center gap-4 bg-learning-blue hover:bg-blue-600 text-white p-8 rounded-2xl shadow-xl transition-all hover:scale-105 active:scale-95 border-b-8 border-blue-800">
+<span class="material-symbols-outlined text-6xl group-hover:animate-spin">history</span>
+<span class="text-2xl font-black uppercase tracking-wider">Continue Last</span>
+</button>
+</div>
+</div>
+</main>
+<nav class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 py-4 flex justify-around items-center sticky bottom-0 z-50">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="House" data-weight="fill">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="BookOpen">menu_book</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Library</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="Medal">workspace_premium</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Badges</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="Gear">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Settings</span>
+</div>
+</nav>
+</div>
+</div>
+</body></html>

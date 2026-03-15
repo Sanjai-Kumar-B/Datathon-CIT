@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Learning Companion - Parent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .notion-card { transition: background-color 0.2s; }
+        .notion-card:hover { background-color: rgba(0,0,0,0.02); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">school</span>
+</div>
+<h1 class="font-bold text-lg tracking-tight">AI Learning</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-900 dark:text-slate-100 hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Activities</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Progress</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">AI Assistant</a>
+<a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-9 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border border-slate-200 dark:border-slate-800" data-alt="Portrait of Sarah the parent" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDf9QqhLE3Disc3p4ugMg86H5KqGgtZcdI9WvNn8bVNbqM-QV4jt2MJzC_m16aL0GDs5FcKWeA9WnfN6LIpuQd0wSseRN8EESYWX9QYraZgpn2F2Tct4LrZZndMK2xHtBhDA6mI9mOoSvcHqjy1aglwtOZkGE5CTIpxH67DA6x0z0eP6hmObSTFCDuGIJ-0egOZV_GArghpgvzLUZGH3uKrphuVDdCeuHIajsLJWK3rA1TB_rLykq2_FeUWesmJyl9sRQ0Bw9x_bXjs')">
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-5xl w-full mx-auto px-6 py-12">
+<!-- Welcome Header -->
+<div class="mb-12">
+<h2 class="text-4xl font-bold tracking-tight mb-2">Good evening, Sarah!</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg">Here's how Alex is learning today.</p>
+</div>
+<!-- Progress Snapshot -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                    Child Progress Snapshot
+                </h3>
+<button class="text-sm font-medium text-primary hover:underline">View detailed report</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Alphabet Card -->
+<div class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 rounded-lg material-symbols-outlined">font_download</span>
+<span class="text-xs font-bold text-blue-600 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">85% Mastered</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Alphabet</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Alex recognized letters P-T today.</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-blue-500 h-full w-[85%] rounded-full"></div>
+</div>
+</div>
+<!-- Numbers Card -->
+<div class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-green-50 dark:bg-green-900/20 text-green-600 rounded-lg material-symbols-outlined">123</span>
+<span class="text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded">70% Mastered</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Numbers</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Practicing simple addition up to 5.</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[70%] rounded-full"></div>
+</div>
+</div>
+<!-- Shapes Card -->
+<div class="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 bg-amber-50 dark:bg-amber-900/20 text-amber-600 rounded-lg material-symbols-outlined">category</span>
+<span class="text-xs font-bold text-amber-600 bg-amber-50 dark:bg-amber-900/20 px-2 py-1 rounded">92% Mastered</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Shapes</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">Identified pentagons and hexagons.</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full w-[92%] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+<!-- Left Column: Suggestions -->
+<div class="lg:col-span-3">
+<section>
+<h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+                        Today's Learning Suggestions
+                    </h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl notion-card cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">counter_1</span>
+</div>
+<div class="flex-1">
+<h4 class="font-medium group-hover:text-primary transition-colors">Practice counting 1-10</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Interactive song and visual game</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl notion-card cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">pets</span>
+</div>
+<div class="flex-1">
+<h4 class="font-medium group-hover:text-primary transition-colors">Animal flashcards</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Vocabulary building with AI voice</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl notion-card cursor-pointer group">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">extension</span>
+</div>
+<div class="flex-1">
+<h4 class="font-medium group-hover:text-primary transition-colors">Shape matching game</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400">Spatial reasoning puzzle level 3</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Recent Activities -->
+<div class="lg:col-span-2">
+<section>
+<h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                        Recent Activities
+                    </h3>
+<div class="space-y-6">
+<div class="flex gap-4 relative">
+<div class="absolute left-4 top-10 bottom-0 w-px bg-slate-200 dark:border-slate-800"></div>
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-slate-500 text-sm">edit</span>
+</div>
+<div class="pb-6">
+<p class="text-sm font-medium">Completed "Drawing Circles"</p>
+<p class="text-xs text-slate-400 mt-0.5">2:15 PM • Alex showed high focus</p>
+</div>
+</div>
+<div class="flex gap-4 relative">
+<div class="absolute left-4 top-10 bottom-0 w-px bg-slate-200 dark:border-slate-800"></div>
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-slate-500 text-sm">smart_toy</span>
+</div>
+<div class="pb-6">
+<p class="text-sm font-medium">Chatted with AI Tutor</p>
+<p class="text-xs text-slate-400 mt-0.5">1:40 PM • Asked about space and stars</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-500 text-sm">play_circle</span>
+</div>
+<div>
+<p class="text-sm font-medium">Watched "The Hungry Caterpillar"</p>
+<p class="text-xs text-slate-400 mt-0.5">Yesterday • Reading comprehension</p>
+</div>
+</div>
+</div>
+<!-- Upgrade/CTA Card -->
+<div class="mt-8 p-6 bg-primary/5 rounded-2xl border border-primary/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h4 class="font-bold text-primary">AI Insights</h4>
+</div>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                            "Alex is showing a strong preference for visual puzzles. We recommend introducing 3D block stacking next."
+                        </p>
+<button class="w-full py-2 bg-primary text-white rounded-lg font-bold text-sm shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                            Enable Auto-Learning Path
+                        </button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-12 border-t border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-background-dark/50">
+<div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-50">
+<span class="material-symbols-outlined">school</span>
+<span class="text-sm font-medium">AI Learning Companion © 2024</span>
+</div>
+<div class="flex gap-8">
+<a class="text-sm text-slate-400 hover:text-slate-600" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-400 hover:text-slate-600" href="#">Parental Controls</a>
+<a class="text-sm text-slate-400 hover:text-slate-600" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

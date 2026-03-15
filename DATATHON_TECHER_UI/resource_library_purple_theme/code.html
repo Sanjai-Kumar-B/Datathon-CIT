@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6366f1",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1a1625",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-full min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col fixed h-full z-20">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary rounded-lg p-2 text-white">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">EduResource</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">grid_view</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="font-medium text-sm">Resource Library</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">favorite</span>
+<span class="font-medium text-sm">Favorites</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">groups</span>
+<span class="font-medium text-sm">Classroom</span>
+</a>
+<div class="pt-4 pb-2 px-3">
+<p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Categories</p>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm text-slate-400">description</span>
+<span class="text-sm">Worksheets</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm text-slate-400">play_circle</span>
+<span class="text-sm">Videos</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm text-slate-400">extension</span>
+<span class="text-sm">Activities</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm text-slate-400">style</span>
+<span class="text-sm">Flashcards</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-white py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-lg">bolt</span>
+                Upgrade Plan
+            </button>
+<div class="mt-4 flex items-center gap-3 px-2">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Female teacher profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBBfPzLWN2U6mKYI9zTEx3rZVhu1jIrB1FBjYunprSgfq1CbQyp8QNOjPZUDcmSjNAqSQnD1N2v6NuK8yK1IY6yAXN80QmnxYUyreKf977egcWXcuOq32Oc5OrM0vG4RFbvlkewswnsQalVVNnGKVWnQ_nrgdvuaMGvZI4NFH2ilhNa9wv2qGptCSwuSWvYkcr0f7q3r2B0kGZsuWjL1_T1FrhoGU3E1cH8sBjtlkd2WHErqhsFV9OZzxMhbPPqi47JkeWDclUVYdi"/>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold leading-none">Sarah Jenkins</p>
+<p class="text-[10px] text-slate-500">K-12 Specialist</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg">settings</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 p-8">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+<div>
+<h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">Resource Library</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Manage and discover educational materials for your classes.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-10 pr-4 py-2 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary w-64 text-sm" placeholder="Search resources..." type="text"/>
+</div>
+<button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 rounded-xl text-slate-600 dark:text-slate-300 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2.5 w-2 h-2 bg-primary rounded-full border-2 border-white dark:border-slate-800"></span>
+</button>
+</div>
+</header>
+<!-- Actions Row -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl text-sm font-semibold whitespace-nowrap">
+                    All Resources
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-medium hover:bg-slate-50 transition-colors whitespace-nowrap">
+                    Worksheets
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-medium hover:bg-slate-50 transition-colors whitespace-nowrap">
+                    Videos
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-medium hover:bg-slate-50 transition-colors whitespace-nowrap">
+                    Activities
+                </button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary/10 text-primary border border-primary/20 rounded-xl text-sm font-bold hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-lg">folder_open</span>
+                    Organize
+                </button>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-bold shadow-md shadow-primary/20 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-lg">upload</span>
+                    Upload Resource
+                </button>
+</div>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Resource Card 1 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all duration-300">
+<div class="relative h-44 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up of a textbook or worksheet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA89NGQ54HarYJHLSlN6wtEmEAl4tMkPXmdugFuPJawQ_WGlDhXYcT6swqtT8ZxVpJG823JtZbOhYY0X4nCiZKXgFFaDs1qSrgZOUT3GrCxmKdEb5xvfvyAPrWUI9jFCsO8qdKkmUbtnndUxhSrD9jsn5_8nJLGrNL176jqylbOteR9v4ovAVvXRcvElxYrXBSS1Z6pTlq6tFRXc4d5oACL7BU9YGf1GBzQ7QMWkK5uRs4UW05g224dsoovXNQ2COluVRXSvVzAlnt6"/>
+<div class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary">Worksheet</div>
+<button class="absolute top-3 right-3 p-1.5 rounded-full bg-white/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm text-slate-700">more_horiz</span>
+</button>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1 group-hover:text-primary transition-colors">Advanced Algebra: Equations</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Grade 10 • Mathematics</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">visibility</span> 1.2k
+                            </div>
+<div class="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">download</span> 450
+                            </div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors cursor-pointer">favorite</span>
+</div>
+</div>
+</div>
+<!-- Resource Card 2 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all duration-300">
+<div class="relative h-44 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Educational video thumbnail showing nature" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZFeSd5kL9vG8m8qXz5q1lb_2l9FH6A7_bp3nVyDtGS3Flh3JGCdO1C5yyCprVGtaIWZkCMoPKVhixQpube9orQ0bYZGssgYTXPfdnUK2VDdFN0sRBoQI5xc5XKotGDotWvaBR8HY13CathsJXjrq2VWOmhyUNbUeLlflUFTp4W0m0HfZNw3LCgQ3C7JoPrNvT87wkB3ekhBdjpTnlCPQ58lHw78bzuXWPXtDDYBUcngpxgB5b1CS4WXZB7H8yFc3nO4APZmfcJJww"/>
+<div class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary">Video</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+<span class="material-symbols-outlined text-white text-4xl">play_circle</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1 group-hover:text-primary transition-colors">The Water Cycle Explained</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Grade 5 • Science</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">schedule</span> 08:45
+                            </div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors cursor-pointer">favorite</span>
+</div>
+</div>
+</div>
+<!-- Resource Card 3 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all duration-300">
+<div class="relative h-44 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Classroom activity materials spread on a table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6yX6pv-9HGFTNwnq7K0tQ6r9kxGucXCwZXYbd-LAnEIR8M5EjnZNqTWUiIRtssx9bEhtHUBejEin3BzZM1oGMPzxlKporRBDWSXNrr3SEkePhUcUrnpWk6zLCUGjrIrC6CTuArjazgDkiXQ_RwWhQT_x51KYPg_Q2uUHGUXYnHk4skwlDpGbw22O-H-abr0ysD2cyZp84g9Y9tQl-GqwlOrj5nYH5yAipWHNAIZfm1scy7MoZGpRS_dKLaII27FbXpKJ1StleuoYy"/>
+<div class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary">Activity</div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1 group-hover:text-primary transition-colors">Interactive Periodic Table</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Grade 8 • Chemistry</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">star</span> 4.8
+                            </div>
+</div>
+<span class="material-symbols-outlined text-primary transition-colors cursor-pointer" style="font-variation-settings: 'FILL' 1">favorite</span>
+</div>
+</div>
+</div>
+<!-- Resource Card 4 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all duration-300">
+<div class="relative h-44 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Flashcards on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzDe-9kCbFakW78nwBXVROSRLv3SuiBbY24ntNoQJkrE-Mq2OFcYBOyW94GJN_ZOY9-MHqJ64OYGvStE8_kQQD3iJbMDK63LCLzVCn37fYjUsNibvErLMjoLK1K1B8t21hKfE1-KDsAfW1kMA8mKtHG2_TkxfwL1qBGvhe3tCVDf2WnHz0O4OZC7P20s1-w9Pk7SzVBOiYkO7Te8uYlYVjh_3Sa4jmCisc3AUzvMSQH6hMd3M1KOdi1o4abvNmwYVhGg9-_4XDQ1xE"/>
+<div class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary">Flashcards</div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1 group-hover:text-primary transition-colors">Common Spanish Verbs</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Grade 7 • Languages</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">content_copy</span> 52 Cards
+                            </div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors cursor-pointer">favorite</span>
+</div>
+</div>
+</div>
+<!-- Resource Card 5 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all duration-300">
+<div class="relative h-44 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Abstract art or creative design background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7u899EEIlDZPFRwYw5HcsJvxeYdN9nJ1gp6oSlzLjb6mBG_LvYNi3vq8Cyryw0f7YmlLoJrlGKjgYjpN-aH1YzupOdAHV8Juiaov5f2da0umtrE2OaWc2TVvby4hmhmXYb-HcxmYdH0Y3HEGTpEnXXn7YfCuLgzjXOPEZ-ijYYm0pbBhYP9_k6sNcHZJT6MOSOpFFHF8fIup81MgTTrJkA2TsfzHxlyP57w4T1xVC0fCXLf3TaZTsL2z6ucMc2hcSZp2QnZiSyHTh"/>
+<div class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary">Worksheet</div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1 group-hover:text-primary transition-colors">Creative Writing Prompts</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Grade 6 • English</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">visibility</span> 892
+                            </div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors cursor-pointer">favorite</span>
+</div>
+</div>
+</div>
+<!-- Resource Card 6 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all duration-300">
+<div class="relative h-44 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Students working on a project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJJ5sB6Q1yH2NEcERPoWvjBNZD51DBum4i7izID7dSYySLOgXM0Orb90Yt2quEB6F_QxgfxbdzC11ka1BGPSivWKhxQrzq4PtpJh8SoVQFeXYl18EgcKzXIlgzGU5Kb04eTwAG8oreNpX13VPl_mzPXjo5DhskWTam3Fedvmk7kQaDzNItRUw26k1L-P2nykzilw7YHHziwDFch4D5Tpe5fNRl7r7j79fdAHub0Qzb2E1e7stwr49STw1NsNdYuKEuw49Nzbo5f24Q"/>
+<div class="absolute top-3 left-3 px-2 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-wider text-primary">Activity</div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-slate-900 dark:text-slate-100 mb-1 group-hover:text-primary transition-colors">World History: Group Quiz</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Grade 9 • History</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[10px] font-medium text-slate-400">
+<span class="material-symbols-outlined text-sm">groups</span> Team Play
+                            </div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors cursor-pointer">favorite</span>
+</div>
+</div>
+</div>
+<!-- Empty State/Upload Prompt -->
+<div class="border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl flex flex-col items-center justify-center p-8 text-center bg-slate-50/50 dark:bg-slate-800/20 hover:bg-slate-100/50 dark:hover:bg-slate-800/40 transition-colors cursor-pointer group">
+<div class="size-14 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:bg-primary/10 transition-all mb-4">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<p class="font-bold text-slate-700 dark:text-slate-300">Add New Resource</p>
+<p class="text-xs text-slate-400 mt-1">Drop files here or click to browse</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

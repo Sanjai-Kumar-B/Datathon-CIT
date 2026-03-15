@@ -1,0 +1,24 @@
+# General
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+
+# Firebase
+*.json
+!backend/.env.example
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Backend
+backend/.env
+backend/generated_videos/
+backend/generated_images/
+backend/video_service_crash.log
+
+# IDE
+.vscode/
+.idea/

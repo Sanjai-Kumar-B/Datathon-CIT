@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parent Communication - Translation Tool</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6366f1",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1a1a2e",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+<div class="p-6 flex items-center gap-3 border-b border-slate-200 dark:border-slate-800">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">translate</span>
+</div>
+<span class="font-bold text-lg tracking-tight">EduLingua</span>
+</div>
+<nav class="flex-1 p-4 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-medium text-sm">Messages</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white transition-colors" href="#">
+<span class="material-symbols-outlined">g_translate</span>
+<span class="font-medium text-sm">Translation Tool</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium text-sm">Students &amp; Parents</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex overflow-hidden">
+<img alt="Sarah Wilson profile" class="w-full h-full object-cover" data-alt="Portrait of a smiling female teacher" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzj6FZ9cLfThCskSGS84PmQLckFg7hsDVk862f8MC9oE_sF4eG6_cOachp-MjoP2ISzV9x35dsDb-yCG-Kuydz-9O7b11CkZ2C8bT991Arm79i5LnSntDfr8CyPiXB7Hr8mfZ4B-lqqJJRL1te3txkIrkJYOQjqDsmUD0eqe_mUHk5Al-cZ3Ltz9k5HEZA95iVDMBLbQl3BXS44iYMfSBNYfAv3QuR4U-9DivSv7wlC-ken-CYp9kAlZjWByTQ1u4-vdr7VYgx3fYU"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Sarah Wilson</span>
+<span class="text-xs text-slate-500">Grade 4 Teacher</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-8 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md sticky top-0 z-10">
+<h2 class="text-xl font-bold">Parent Communication Tool</h2>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-5xl mx-auto space-y-8">
+<!-- Hero Header -->
+<div class="space-y-2">
+<h1 class="text-3xl font-black tracking-tight">Bridge the Language Gap</h1>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl text-lg leading-relaxed">
+                    Translate classroom updates, permission slips, and individual student progress reports into multiple languages instantly to ensure every parent stays informed.
+                </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Input Section -->
+<div class="space-y-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+<h3 class="font-bold text-lg">Message Content</h3>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-slate-500 uppercase tracking-wider">Instruction or Message</label>
+<textarea class="w-full min-h-[200px] p-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none text-slate-800 dark:text-slate-200" placeholder="Example: Dear Parents, we are planning a field trip to the local science museum next Friday. Please sign the attached permission slip..."></textarea>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-slate-500 uppercase tracking-wider">Target Language</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 border-primary bg-primary/5 text-primary font-semibold">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                                    Tamil
+                                </button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors font-medium text-slate-700 dark:text-slate-300">
+                                    Hindi
+                                </button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors font-medium text-slate-700 dark:text-slate-300">
+                                    Telugu
+                                </button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors font-medium text-slate-700 dark:text-slate-300">
+                                    English
+                                </button>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-lg font-bold text-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">magic_button</span>
+                            Generate Translation
+                        </button>
+</div>
+</div>
+<!-- Output Section -->
+<div class="space-y-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm h-full flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<h3 class="font-bold text-lg">Translated Message</h3>
+</div>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-500">TAMIL</span>
+</div>
+<div class="flex-1 bg-slate-50 dark:bg-slate-800/50 p-6 rounded-lg border border-dashed border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-300 italic leading-relaxed">
+<p class="mb-4">அன்புள்ள பெற்றோர்களே,</p>
+<p class="mb-4">அடுத்த வெள்ளிக்கிழமை உள்ளூர் அறிவியல் அருங்காட்சியகத்திற்கு ஒரு களப்பயணத்தைத் திட்டமிட்டுள்ளோம். இணைக்கப்பட்டுள்ள அனுமதிச் சீட்டில் கையொப்பமிட்டு உங்கள் குழந்தையிடம் கொடுத்து அனுப்புமாறு கேட்டுக்கொள்கிறோம்.</p>
+<p>நன்றி,<br/>சாரா வில்சன் (வகுப்பு ஆசிரியர்)</p>
+</div>
+<div class="mt-8 flex flex-col sm:flex-row gap-3">
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg border border-slate-300 dark:border-slate-600 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined text-xl text-primary">content_copy</span>
+                                Copy Text
+                            </button>
+<button class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-semibold hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-xl">send</span>
+                                Send to Parents
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Translations -->
+<section class="space-y-4 pt-4">
+<h4 class="font-bold text-lg">Recent Translations</h4>
+<div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+<th class="px-6 py-4">Original Message</th>
+<th class="px-6 py-4">Language</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Homework update for Monday...</td>
+<td class="px-6 py-4 text-sm">Hindi</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+                                        Sent
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Science museum field trip...</td>
+<td class="px-6 py-4 text-sm">Tamil</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+                                        Sent
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Parent teacher meeting rem...</td>
+<td class="px-6 py-4 text-sm">Telugu</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 20, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                                        Draft
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

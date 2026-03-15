@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Insights Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6366f1",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1a1a2e",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-primary/10 flex flex-col bg-white dark:bg-background-dark/50 shrink-0">
+<div class="p-6 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-base font-bold leading-none">EduTrack</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Teacher Panel</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary text-white font-medium" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-sm">Students</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+<span class="text-sm">Curriculum</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">bar_chart</span>
+<span class="text-sm">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-primary/10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 bg-cover bg-center" data-alt="Teacher profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWd11528k41Bc9tuze_k4zaw30-89x1Hb8vQo8-k0-B3yx6_a5GtSzV_X1OD6jU2_z12E8P22MelieeRyTFBRBlJTwHG87iEn1rc7JnerdlwAPNVugt6p7fcxkdbL77JwmU2N36BgLyZ3kNFoCjHWztzkQO8XTbYC811ZrvbOJY2IMxQ7GFbCTbKaLHBj2JJLO4S12GL0_O1u_D-Nv7jQwOLonbz_Q2m8uJs71go-d0A2waK1kwYpUgpQxV9PLKM6nlaxN5pmFVFPu')"></div>
+<div class="flex flex-col">
+<p class="text-xs font-semibold">Mrs. Robinson</p>
+<p class="text-[10px] text-slate-500">Class 2-A</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Header -->
+<header class="h-16 border-b border-primary/10 flex items-center justify-between px-8 shrink-0 bg-white/50 dark:bg-background-dark/50 backdrop-blur-sm">
+<h2 class="text-lg font-bold">Student Insights</h2>
+<div class="flex items-center gap-4">
+<div class="relative max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-64 pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Search students..." type="text"/>
+</div>
+<button class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<div class="p-8 flex flex-col gap-8 max-w-7xl mx-auto w-full">
+<!-- Summary Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Alphabet Mastery</p>
+<span class="text-xs font-bold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-lg">+2.4%</span>
+</div>
+<div class="flex items-end gap-2">
+<h3 class="text-3xl font-bold">82%</h3>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full mb-2 overflow-hidden">
+<div class="h-full bg-primary" style="width: 82%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Numbers &amp; Logic</p>
+<span class="text-xs font-bold text-rose-500 bg-rose-500/10 px-2 py-1 rounded-lg">-1.5%</span>
+</div>
+<div class="flex items-end gap-2">
+<h3 class="text-3xl font-bold">65%</h3>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full mb-2 overflow-hidden">
+<div class="h-full bg-primary" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Shapes &amp; Geometry</p>
+<span class="text-xs font-bold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-lg">+5.0%</span>
+</div>
+<div class="flex items-end gap-2">
+<h3 class="text-3xl font-bold">94%</h3>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full mb-2 overflow-hidden">
+<div class="h-full bg-primary" style="width: 94%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-white dark:bg-slate-800/50 rounded-xl border border-primary/10 overflow-hidden shadow-sm">
+<div class="p-6 border-b border-primary/10 flex justify-between items-center">
+<h3 class="font-bold text-lg">Student Progress Overview</h3>
+<button class="text-sm font-medium text-primary hover:underline">View All Students</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-900/50">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Student Name</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Alphabet Progress</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Numbers Progress</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Last Activity</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<!-- Student 1 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-primary text-xs">AJ</div>
+<span class="text-sm font-medium">Alex Johnson</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 82%"></div>
+</div>
+<span class="text-xs font-bold">82%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 70%"></div>
+</div>
+<span class="text-xs font-bold">70%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">2 hours ago</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600">On Track</span>
+</td>
+</tr>
+<!-- Student 2 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-primary text-xs">ES</div>
+<span class="text-sm font-medium">Emma Smith</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 45%"></div>
+</div>
+<span class="text-xs font-bold">45%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 30%"></div>
+</div>
+<span class="text-xs font-bold">30%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">5 hours ago</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-rose-500/10 text-rose-600">At Risk</span>
+</td>
+</tr>
+<!-- Student 3 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-primary text-xs">LB</div>
+<span class="text-sm font-medium">Liam Brown</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 95%"></div>
+</div>
+<span class="text-xs font-bold">95%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 88%"></div>
+</div>
+<span class="text-xs font-bold">88%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">1 day ago</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600">On Track</span>
+</td>
+</tr>
+<!-- Student 4 -->
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-primary text-xs">SD</div>
+<span class="text-sm font-medium">Sophia Davis</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 60%"></div>
+</div>
+<span class="text-xs font-bold">60%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex-1 h-1.5 min-w-[100px] bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 55%"></div>
+</div>
+<span class="text-xs font-bold">55%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-500">3 hours ago</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600">On Track</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-primary/10 flex items-center justify-between text-sm text-slate-500">
+<span>Showing 4 of 24 students</span>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Insights Card -->
+<div class="bg-primary/10 border border-primary/20 rounded-xl p-6 flex items-start gap-4">
+<div class="p-3 bg-primary rounded-xl text-white">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div>
+<h4 class="font-bold text-primary mb-1">Weekly Insight</h4>
+<p class="text-sm text-slate-700 dark:text-slate-300">Class performance in "Numbers &amp; Logic" has decreased by 1.5%. Consider introducing gamified math modules next week to increase engagement among students currently marked "At Risk".</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

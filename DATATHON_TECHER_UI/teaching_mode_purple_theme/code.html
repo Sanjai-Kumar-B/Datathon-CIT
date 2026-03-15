@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teaching Mode - Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6366f1",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1a1625",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen overflow-hidden">
+<div class="relative flex h-screen w-full flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-6 py-4 border-b border-primary/10 bg-background-light dark:bg-background-dark/50 backdrop-blur-md z-10">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Teaching Mode</h2>
+<p class="text-xs font-medium text-primary uppercase tracking-widest">Active Session</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col items-end mr-4">
+<span class="text-sm font-bold">Classroom 101</span>
+<span class="text-xs opacity-70 text-slate-600 dark:text-slate-400">Mathematics Basics</span>
+</div>
+<button class="flex items-center justify-center rounded-xl size-12 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">fullscreen_exit</span>
+</button>
+<button class="flex items-center justify-center rounded-xl size-12 bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<!-- Main Flashcard Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center p-6 md:p-12 gap-8 relative">
+<!-- Progress Indicator -->
+<div class="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+<span class="text-primary font-bold text-lg">Flashcard 12 of 20</span>
+<div class="w-64 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[60%] rounded-full"></div>
+</div>
+</div>
+<!-- Large Flashcard -->
+<div class="w-full max-w-5xl aspect-[16/9] bg-white dark:bg-slate-900 rounded-[2rem] shadow-2xl flex flex-col md:flex-row overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Visual Side -->
+<div class="w-full md:w-3/5 h-full relative bg-primary/5 p-8 flex items-center justify-center">
+<div class="grid grid-cols-3 gap-6 items-center justify-center">
+<div class="size-32 md:size-40 bg-center bg-contain bg-no-repeat" data-alt="A single bright orange fruit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFWTGIuiqG0yR84or_oEb5muS9aaVqZWDw6Id0rRN1_27GIqaGGLTtyXoF2H-Uf26wRaskwKy3Fgs_6H7NK5npj61i6CS1883ohODSijX-wEqCMthKy1ZMNOiMxmIz8dyE00L8WHEa-nicKHBpL1dGQJWfla6U7Hxe5uBBvhGIXkvVlpPKSIwwCnuxgavFtgAdQ6ksu9aXchg5Osl-mfXgMAtkSIx1_tv-kfHYJDhH2WAWh-WCiMtTpL8YxZSsWscz6GcsvObrmIeH');"></div>
+<div class="size-32 md:size-40 bg-center bg-contain bg-no-repeat" data-alt="A single bright orange fruit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnqjrT-a1PrCFPsSJ8q72ey0a2IM0QlVjtp3v5IClLtoj8At8vI61_A-Kzkg9obnfn_sYymFU0GrjRnUBYZCh89ANaHBEn72NPgNu5IDE4s5ZIzDEb2iYwfp9U205ohKoG4IKQ3MvlbGzt1bPTVTNt563NRIoHzW2xtERLzNhCKRlet9_cLsGYCVl4yw8haiAwr_Ak8zUrIkGRQ22mIpnGHm1FgXgu1k9ZTbHPwm9gWffonuZBG0wDqCeGPfNX3_rJuyyb2LQXRj7u');"></div>
+<div class="size-32 md:size-40 bg-center bg-contain bg-no-repeat" data-alt="A single bright orange fruit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-lGyqrQ062ZXMV2TgOz_MAdu2hk20iwz199BAkU5xkzsjVrdj8y-r0c3bajUTl_L4qiexM2BpSmGVYZH2tdi_9V033vnfT-FqNZ6WZsWLXUtkraqZVPkTa4UNh-uMcnUDwR-yJWf1ApJXBT4nDke0frOV3LO6KmYHMEVoOoBZwKNSo4adrGO8CakHhvOWfOUqB4Gv_7D5YhO8UGOrfyC_wkTjQpsEL1g4NTMBvlWDUub8fkYjpAC11XN-yONnLTLo4TsQiXnkkJ_I');"></div>
+<div class="size-32 md:size-40 bg-center bg-contain bg-no-repeat col-start-1" data-alt="A single bright orange fruit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVP474HnVRVRerRtvoFpuTe437uBieS5dTeBrQxkgaBddAHF2fl5vvp8cE4n6UdPQhvAhkmeT1zmKlUpuzpoyBMjrGBX-DmWGwmPOYdp5AiNjmaGc13madGiyD4SgFky0EysIHTKwRbG9wh5X5X7NO8-3qGrpQO5T9vEV98sW1t9AwUsQ0Cvym_cGzhbdO30QKMPl1uSS3-Oqj52WKkDiJCYyJ8-4v9DJaATbTWbHcTcG7FmW42DVtck8rprefAz1NnxFAkziPFc0L');"></div>
+<div class="size-32 md:size-40 bg-center bg-contain bg-no-repeat" data-alt="A single bright orange fruit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAY82sK7gDfUSrNHHlmQxPgBzh6DbpIIxGmhf6juaqF_DgVVc1-4cjTvPF1EqGVDqi6r-upRKnTvNnewsvPL-zz02fu1JOOsM_Fmv3reH3Rk2p_MC0rUYLtj1350u0yHkMvtJ1GeJgP7C404n9wURYPBYnMGfCIurtMv6hv1-j-C8x2-WxlL_5icnU7G08llaSQ5uy4Cuz8Gd6i3GdsnSnNlXmd0HsXoWnzTOR4Byzn2WMQqBdeFDcGVlI3Bm17NGBBPFXrkkjB8PMl');"></div>
+</div>
+</div>
+<!-- Text Side -->
+<div class="w-full md:w-2/5 h-full flex flex-col items-center justify-center p-12 bg-white dark:bg-slate-900 border-l border-slate-100 dark:border-slate-800">
+<div class="text-center">
+<h1 class="text-[12rem] md:text-[16rem] font-black leading-none text-primary mb-4">5</h1>
+<p class="text-3xl md:text-5xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">Five Oranges</p>
+</div>
+</div>
+</div>
+<!-- Projection Navigation Controls -->
+<div class="w-full max-w-5xl flex items-center justify-between gap-8 px-4">
+<button class="flex-1 max-w-xs flex items-center justify-center gap-4 h-24 rounded-2xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all group">
+<span class="material-symbols-outlined text-4xl group-hover:-translate-x-2 transition-transform">arrow_back</span>
+<span class="text-2xl font-bold">Previous</span>
+</button>
+<div class="flex gap-4">
+<button class="size-16 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">volume_up</span>
+</button>
+<button class="size-16 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">visibility_off</span>
+</button>
+</div>
+<button class="flex-1 max-w-xs flex items-center justify-center gap-4 h-24 rounded-2xl bg-primary text-white hover:opacity-90 transition-all shadow-xl shadow-primary/30 group">
+<span class="text-2xl font-bold">Next</span>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Tooltip/Hotkeys Bar -->
+<footer class="py-4 px-12 border-t border-primary/10 flex justify-center bg-background-light dark:bg-background-dark/50">
+<div class="flex gap-8 text-sm font-medium text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-2">
+<kbd class="px-2 py-1 bg-slate-200 dark:bg-slate-800 rounded text-xs font-bold text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">ESC</kbd>
+<span>Exit Mode</span>
+</div>
+<div class="flex items-center gap-2">
+<kbd class="px-2 py-1 bg-slate-200 dark:bg-slate-800 rounded text-xs font-bold text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">← / →</kbd>
+<span>Navigate</span>
+</div>
+<div class="flex items-center gap-2">
+<kbd class="px-2 py-1 bg-slate-200 dark:bg-slate-800 rounded text-xs font-bold text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">SPACE</kbd>
+<span>Speak Word</span>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

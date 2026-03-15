@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8B5CF6", // Professional Purple from SCREEN_33
+                        "secondary": "#3B82F6", // Consistent blue accent
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#1e1b4b", // Darker indigo for dark mode
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-display">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="flex flex-col h-full p-4 gap-6">
+<!-- User Profile -->
+<div class="flex items-center gap-3 px-2 py-4">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="Sarah Profile" class="w-full h-full object-cover" data-alt="Portrait of a friendly female teacher" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_mf6uiRIUB_mtHIzngR2H5GOLJ_B6XcXxX59pbi6xYgdI6aFxnPV3C9-7Z50_1WiJNzTLKKd2UkvcI3DrPQ8eoKo-qlgD2jCevSWhWJyJ4mhBeksV71rqRZXn-i2u7G3LpwYXUfx2adCdc5H1tdPEky67yC7LTD5AH9RBtE8hWGbwMg04r4ynRwp42uW8VcxtUa0SyHJ1Ah8iSgRuvqp61Sas5CFWt-dZG1ODwmg9Beu-cfySXw4rgU3Q8SzpNZRz6NRVOLqEMBK1"/>
+</div>
+<div class="flex flex-col">
+<h1 class="text-sm font-semibold leading-none">Sarah</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Teacher Account</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl bg-primary text-white shadow-sm shadow-primary/30" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-sm font-medium">AI Lesson Planner</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="text-sm font-medium">Flashcards</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="text-sm font-medium">Resources</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Student Insights</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-sm font-medium">Parent Communication</span>
+</a>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-8 max-w-[1200px] mx-auto">
+<!-- Header -->
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Good morning, Sarah!</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Here's what's happening in your classes today.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                    Schedule
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg shadow-md hover:bg-primary/90 text-sm font-medium transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                    Create New
+                </button>
+</div>
+</div>
+<!-- Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Activities Generated</p>
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-slate-50">24</p>
+<p class="text-xs text-green-600 mt-2 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12% from last week
+                </p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Flashcards Created</p>
+<span class="material-symbols-outlined text-secondary">style</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-slate-50">1,240</p>
+<p class="text-xs text-slate-400 mt-2">All time total</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Active Lessons</p>
+<span class="material-symbols-outlined text-primary">book</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-slate-50">42</p>
+<p class="text-xs text-primary mt-2">6 due this week</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">AI Queries</p>
+<span class="material-symbols-outlined text-secondary">psychology</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-slate-50">856</p>
+<p class="text-xs text-slate-400 mt-2">Unlimited Plan</p>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="mb-8">
+<h3 class="text-lg font-bold mb-4">Quick Actions</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+<button class="flex items-center justify-center flex-col gap-2 p-4 bg-primary/10 border border-primary/20 rounded-xl hover:bg-primary/20 transition-all text-primary">
+<span class="material-symbols-outlined text-[32px]">add_box</span>
+<span class="text-sm font-bold">New Lesson</span>
+</button>
+<button class="flex items-center justify-center flex-col gap-2 p-4 bg-secondary/10 border border-secondary/20 rounded-xl hover:bg-secondary/20 transition-all text-secondary">
+<span class="material-symbols-outlined text-[32px]">flash_on</span>
+<span class="text-sm font-bold">Generate Flashcards</span>
+</button>
+<button class="flex items-center justify-center flex-col gap-2 p-4 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+<span class="material-symbols-outlined text-[32px]">upload_file</span>
+<span class="text-sm font-bold">Upload Resource</span>
+</button>
+<button class="flex items-center justify-center flex-col gap-2 p-4 bg-slate-900 dark:bg-slate-100 dark:text-slate-900 text-white rounded-xl hover:bg-slate-800 dark:hover:bg-white transition-all">
+<span class="material-symbols-outlined text-[32px]">play_circle</span>
+<span class="text-sm font-bold">Start Class</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- AI Suggested Topics -->
+<div class="lg:col-span-1">
+<h3 class="text-lg font-bold mb-4">AI Suggested Topics</h3>
+<div class="flex flex-col gap-3">
+<div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between group cursor-pointer hover:border-primary transition-colors shadow-sm">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold">123</div>
+<div>
+<p class="text-sm font-bold">Numbers 1-10</p>
+<p class="text-xs text-slate-400">Math Fundamentals</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between group cursor-pointer hover:border-secondary transition-colors shadow-sm">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">category</span>
+</div>
+<div>
+<p class="text-sm font-bold">Shapes</p>
+<p class="text-xs text-slate-400">Geometry Basics</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-secondary transition-colors">arrow_forward_ios</span>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between group cursor-pointer hover:border-primary transition-colors shadow-sm">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div>
+<p class="text-sm font-bold">Colors</p>
+<p class="text-xs text-slate-400">Visual Arts</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity Table -->
+<div class="lg:col-span-2">
+<h3 class="text-lg font-bold mb-4">Recent Activity</h3>
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+<table class="w-full text-left text-sm">
+<thead class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+<tr>
+<th class="px-6 py-4 font-semibold">Activity</th>
+<th class="px-6 py-4 font-semibold">Status</th>
+<th class="px-6 py-4 font-semibold">Time</th>
+<th class="px-6 py-4 font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<span class="font-medium">Lesson Plan: Solar System</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Completed</span>
+</td>
+<td class="px-6 py-4 text-slate-500">2h ago</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-medium">View</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">style</span>
+<span class="font-medium">Flashcards: Ancient Egypt</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">Draft</span>
+</td>
+<td class="px-6 py-4 text-slate-500">4h ago</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-medium">Edit</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<span class="font-medium">AI Quiz Generation</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Completed</span>
+</td>
+<td class="px-6 py-4 text-slate-500">Yesterday</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-medium">View</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">upload</span>
+<span class="font-medium">Worksheet: Fractions.pdf</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">Uploaded</span>
+</td>
+<td class="px-6 py-4 text-slate-500">Yesterday</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/80 font-medium">Manage</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

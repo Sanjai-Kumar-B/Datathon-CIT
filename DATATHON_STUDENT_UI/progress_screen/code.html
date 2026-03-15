@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0ea5e9", // Sky Blue
+                        "background-light": "#f0f9ff", // Soft Sky Blue tint
+                        "background-dark": "#0c4a6e",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 bg-white dark:bg-slate-900 px-6 py-4 md:px-10">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined block">star</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-black leading-tight tracking-tight">My Progress</h2>
+</div>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-xl bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-6 md:py-10">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 px-4">
+<!-- Profile Header Section -->
+<div class="flex flex-wrap items-center justify-between gap-4 p-4 mb-6 bg-white dark:bg-primary/5 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 p-1 rounded-full border-2 border-primary">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-16" data-alt="Cute cartoon avatar of a happy child explorer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIRYiSVjQ9e76-O0DTf2YHOcU65ESqOvdA1-OcBDbW9MGVh76F1dUrUUcR0a_8-LFnNZqDVTHKwhxo1a4w0Y0nOvlPC4t7KHSLriSMNngQyO5XF6EO8_4xgJCfc6tic7cygKYulGZGyPBqirPnP3eyb_kE5YUM3a_nnnSdqrgLxHpOIPDpWTb7O9nMyvCctlGjELPc5q9o7zNd5iYofDJvy0cdZhm8evN0cYocwkEMa5K4NZfD1Qh2zvB-NUY0-6EmQjtHtTyFZXKl");'></div>
+</div>
+<div>
+<h1 class="text-2xl font-black text-slate-900 dark:text-white">Little Explorer</h1>
+<p class="text-primary font-bold">Level 5 Rookie</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Stars</p>
+<div class="flex items-center gap-1">
+<span class="text-3xl font-black text-primary">6</span>
+<span class="material-symbols-outlined text-primary text-3xl">stars</span>
+</div>
+</div>
+</div>
+<!-- Progress Grid -->
+<div class="grid gap-6">
+<!-- Topic 1: Alphabet -->
+<div class="flex flex-col md:flex-row items-stretch gap-4 rounded-xl bg-white dark:bg-slate-800 p-6 shadow-md border-b-4 border-green-500">
+<div class="flex flex-1 flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500">font_download</span>
+<p class="text-slate-900 dark:text-white text-xl font-black">Alphabet Adventure</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-bold">Amazing! You know all letters!</p>
+</div>
+<div class="flex gap-1 text-yellow-400">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-wider">
+<span>Mastery</span>
+<span>100%</span>
+</div>
+<div class="h-4 w-full rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="h-full bg-green-500 rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<button class="flex w-full md:w-fit cursor-pointer items-center justify-center rounded-xl h-10 px-6 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-black transition-colors hover:bg-slate-200">
+                                Review Lesson
+                            </button>
+</div>
+<div class="hidden md:block w-48 bg-center bg-no-repeat aspect-square bg-cover rounded-xl bg-green-50 dark:bg-green-900/20" data-alt="Colorful alphabet blocks with letters A B C" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTSzFcqGWBOKNDqRCzVCeQRyGTa_bLUArmeCNPPfkyuJhYzgMqtYbJiViFRXe0Ncz6aBSHxJuOWF6ddK1Sk5yFPJGDmjMvatqYBqtES_A8yGtOsweHF-9pOpnsh3Hr9rFP_ACb_S6fiRNAMuwyW6zYamQm3q4ErgGcAloaVTCJbwTQscrEEC3jGKIK0hBXYfTXJcu9JqseiCky-S01e6enZzYkRaOtAKchBVjwMObXjLbEPQZS-qDDOfPASZe85Tx25YOIXdNFMLX9");'></div>
+</div>
+<!-- Topic 2: Numbers -->
+<div class="flex flex-col md:flex-row items-stretch gap-4 rounded-xl bg-white dark:bg-slate-800 p-6 shadow-md border-b-4 border-primary">
+<div class="flex flex-1 flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">counter_1</span>
+<p class="text-slate-900 dark:text-white text-xl font-black">Number Magic</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-bold">You're almost there! One more star!</p>
+</div>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-yellow-400 fill-1">star</span>
+<span class="material-symbols-outlined text-yellow-400 fill-1">star</span>
+<span class="material-symbols-outlined text-slate-200 dark:text-slate-600">star</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-wider">
+<span>Progress</span>
+<span>65%</span>
+</div>
+<div class="h-4 w-full rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+<button class="flex w-full md:w-fit cursor-pointer items-center justify-center rounded-xl h-10 px-6 bg-primary text-white text-sm font-black shadow-lg shadow-primary/30 hover:brightness-110">
+                                Continue Learning
+                            </button>
+</div>
+<div class="hidden md:block w-48 bg-center bg-no-repeat aspect-square bg-cover rounded-xl bg-primary/10" data-alt="Bright numbers one two three in playful shapes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGcE0OnYy8pGmUjYDfSdRnTRIpcTbKwTMn-lt5e5CensE29Dl8nvNYxo4Jhur3nqMP8bO2s6IOq-o5BIDFYMYJk6AAD_qgZgf4Q7UHcNMriQweybhCCq3aBWt0XOR3p4TbW-CdlaV18k-EbdwanDe2tkIUkA_ceo2NPTNm-LT9yvmdjzskjYcgl_SrzcGU2CsVno5byd1tV_S9nE0-pP_3mpA95EZqQzb7X2qqOalE2rcyxHnfEhThF7Pz_Z5CYrldNGV5PLXkbNfQ");'></div>
+</div>
+<!-- Topic 3: Animals -->
+<div class="flex flex-col md:flex-row items-stretch gap-4 rounded-xl bg-white dark:bg-slate-800 p-6 shadow-md border-b-4 border-blue-500">
+<div class="flex flex-1 flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500">pets</span>
+<p class="text-slate-900 dark:text-white text-xl font-black">Animal Friends</p>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-bold">Ready to start exploring animals?</p>
+</div>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-yellow-400 fill-1">star</span>
+<span class="material-symbols-outlined text-slate-200 dark:text-slate-600">star</span>
+<span class="material-symbols-outlined text-slate-200 dark:text-slate-600">star</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-wider">
+<span>Start</span>
+<span>30%</span>
+</div>
+<div class="h-4 w-full rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" style="width: 30%;"></div>
+</div>
+</div>
+<button class="flex w-full md:w-fit cursor-pointer items-center justify-center rounded-xl h-10 px-6 bg-blue-500 text-white text-sm font-black shadow-lg shadow-blue/30 hover:brightness-110">
+                                Play Lesson
+                            </button>
+</div>
+<div class="hidden md:block w-48 bg-center bg-no-repeat aspect-square bg-cover rounded-xl bg-blue-50 dark:bg-blue-900/20" data-alt="Cute friendly cartoon lion and elephant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsVuxPaXiXLqDDKc0RCjN1cJs7WPYlz7dp1_jczdLnG3gkcKv2zxdwwfDbLaTMtufRtDgs3-pggbZ8OeyLWYp59HgWXkiPOXXOtjs-JLguwTTQj1-vFfTtnaczKiD9iBH-AbB3lzHt1-vq89FlgX2s0Gs8Dxogs5CsYjIuYC_vtfQ4mdr-uzD3bZM4MLPqd45rhmd1nU1-tTuqYAXmS8BitsA8WET4kcQN-mM3oWEnpbSixMxaWHRb5BzNrfIZB8mpRPcOrholvvNE");'></div>
+</div>
+</div>
+<!-- Motivational Bottom Bar -->
+<div class="mt-10 p-6 bg-gradient-to-r from-primary/20 to-primary/5 rounded-2xl border-2 border-dashed border-primary/30 text-center">
+<div class="flex flex-col items-center gap-2">
+<div class="size-12 rounded-full bg-primary flex items-center justify-center text-white mb-2">
+<span class="material-symbols-outlined text-3xl">emoji_events</span>
+</div>
+<h3 class="text-xl font-black text-slate-900 dark:text-white">Keep going, Champion!</h3>
+<p class="text-slate-600 dark:text-slate-300 font-medium">You are doing a fantastic job. Play more games to win even more stars!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Navigation -->
+<nav class="flex justify-around items-center bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-3 px-4 sticky bottom-0">
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-bold">Lessons</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<div class="bg-primary/10 p-2 rounded-xl">
+<span class="material-symbols-outlined fill-1">analytics</span>
+</div>
+<span class="text-[10px] font-bold">Progress</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="text-[10px] font-bold">Games</span>
+</div>
+</nav>
+</div>
+</div>
+</body></html>
